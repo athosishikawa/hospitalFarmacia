@@ -10,7 +10,7 @@ import edu.ifpr.projeto.hospitalfarmacia.model.Dispensacao;
 
 public interface DispensacaoRepository extends JpaRepository<Dispensacao, Integer>{
     @Query("SELECT p FROM Dispensacao p WHERE p.id = :id")
-    public Dispensacao findById(@Param("id") String id);
+    public Dispensacao findById(@Param("id") int id);
 
     //TODO: verificar 
     @Query("SELECT p FROM Dispensacao p WHERE p.dataDispensacao.id = :iddataDispensacao")
