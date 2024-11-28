@@ -41,6 +41,6 @@ public class Dependente implements Serializable{
         joinColumns = @JoinColumn(name = "depente_id"),
         inverseJoinColumns = @JoinColumn(name = "pessoa_id")
     )
-    private List<Pessoa> pessoas;
+    private List<Dependente> dependentes;
 }
 
