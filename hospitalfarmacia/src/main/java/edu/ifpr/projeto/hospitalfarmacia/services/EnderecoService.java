@@ -14,7 +14,7 @@ public class EnderecoService {
     @Autowired
     private EnderecoRepository enderecoRepository;
 
-    public void salvarEndereco(Endereco endereco){
+    public void cadastrarEndereco(Endereco endereco){
         if(endereco.getCep() == null || endereco.getCep().isEmpty()){
             return;
         }
@@ -33,7 +33,7 @@ public class EnderecoService {
     }
 
     //SELECT e FROM Endereco 
-    public List<Endereco> listAll(){
+    public List<Endereco> findAllEnderecos(){
         return enderecoRepository.findAll();
     }
 

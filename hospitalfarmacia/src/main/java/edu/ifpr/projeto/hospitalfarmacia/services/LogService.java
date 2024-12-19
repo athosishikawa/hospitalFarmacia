@@ -14,7 +14,7 @@ public class LogService {
     @Autowired
     private LogRepository logRepository;
 
-    public void cadatrarLog(Log log){
+    public void cadastrarLog(Log log){
         if(log.getId() == null){
             return;
         }
@@ -23,7 +23,7 @@ public class LogService {
 
     public void alterarLog(Log log){
         if(log.getId() == null || log.getId().equals(0)){
-            cadatrarLog(log);
+            cadastrarLog(log);
         }
         logRepository.save(log);
     }
@@ -37,7 +37,7 @@ public class LogService {
         return logRepository.findById(idLog);
     }
 
-    public List<Log> findAllReceita(){
+    public List<Log> findAllLog(){
         return logRepository.findAll();
     }
 

@@ -1,7 +1,6 @@
 package edu.ifpr.projeto.hospitalfarmacia.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,8 +33,8 @@ public class FarmaciaService {
         farmaciaRepository.delete(p);
     }
 
-    public Optional<Farmacia> findById(int idFarmacia){
-        return farmaciaRepository.findById(idFarmacia);
+    public Farmacia findById(String idFarmacia){
+        return farmaciaRepository.findByCnpj(idFarmacia);
     }
 
     public List<Farmacia> findAllFarmacia(){

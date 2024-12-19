@@ -37,7 +37,7 @@ public class MedicamentoService {
         return medicamentoRepository.findById(idItemReceita);
     }
 
-    public List<Medicamento> findAllDependente(){
+    public List<Medicamento> findAllMedicamentos(){
         return medicamentoRepository.findAll();
     }
 

@@ -14,7 +14,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void cadatrarUser(User user){
+    public void cadastrarUser(User user){
         if(user.getLogin() == null || user.getLogin().isEmpty()){
             return;
         }
@@ -23,7 +23,7 @@ public class UserService {
 
     public void alterarPessoa(User user){
         if(user.getId() == null || user.getId().equals(0)){
-            cadatrarUser(user);
+            cadastrarUser(user);
         }
         userRepository.save(user);
     }

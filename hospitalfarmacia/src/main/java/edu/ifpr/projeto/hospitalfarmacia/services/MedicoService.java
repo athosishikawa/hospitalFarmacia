@@ -16,7 +16,7 @@ public class MedicoService {
     @Autowired
     private MedicoRepository medicoRepository;
 
-    public void cadatrarMedico(Medico medico){
+    public void cadastrarMedico(Medico medico){
         if(medico.getCrm() == null || medico.getCrm().isEmpty()){
             return;
         }
@@ -25,7 +25,7 @@ public class MedicoService {
 
     public void alterarMedico(Medico medico){
         if(medico.getId() == null || medico.getId().equals(0)){
-            cadatrarMedico(medico);
+            cadastrarMedico(medico);
         }
         medicoRepository.save(medico);
     }

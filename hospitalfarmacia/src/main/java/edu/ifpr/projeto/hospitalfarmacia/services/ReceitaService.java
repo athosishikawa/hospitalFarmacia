@@ -14,7 +14,7 @@ public class ReceitaService {
     @Autowired
     private ReceitaRepository receitaRepository;
 
-    public void cadatrarReceita(Receita receita){
+    public void cadastrarReceita(Receita receita){
         if(receita.getId() == null){
             return;
         }
@@ -23,7 +23,7 @@ public class ReceitaService {
 
     public void alterarReceita(Receita receita){
         if(receita.getId() == null || receita.getId().equals(0)){
-            cadatrarReceita(receita);
+            cadastrarReceita(receita);
         }
         receitaRepository.save(receita);
     }

@@ -37,7 +37,7 @@ public class ItemReceitaService {
         return itemReceitaRepository.findById(idItemReceita);
     }
 
-    public List<ItemReceita> findAllDependente(){
+    public List<ItemReceita> findAllItemReceita(){
         return itemReceitaRepository.findAll();
     }
 

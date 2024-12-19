@@ -14,7 +14,7 @@ public class PacienteService {
     @Autowired
     private PacienteRepository pacienteRepository;
 
-    public void cadatrarPaciente(Paciente paciente){
+    public void cadastrarPaciente(Paciente paciente){
         if(paciente.getId() == null){
             return;
         }
@@ -23,7 +23,7 @@ public class PacienteService {
 
     public void alterarPaciente(Paciente paciente){
         if(paciente.getId() == null || paciente.getId().equals(0)){
-            cadatrarPaciente(paciente);
+            cadastrarPaciente(paciente);
         }
         pacienteRepository.save(paciente);
     }
@@ -37,7 +37,7 @@ public class PacienteService {
         return pacienteRepository.findById(idPaciente);
     }
 
-    public List<Paciente> findAllReceita(){
+    public List<Paciente> findAllPacientes(){
         return pacienteRepository.findAll();
     }
 

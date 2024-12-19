@@ -14,7 +14,7 @@ public class DispensacaoService {
     @Autowired
     private DispensacaoRepository dispensacaoRepository;
 
-    public void cadatrarDispensacao(Dispensacao dispensacao){
+    public void cadastrarDispensacao(Dispensacao dispensacao){
         if(dispensacao.getId() == null){
             return;
         }
@@ -23,7 +23,7 @@ public class DispensacaoService {
 
     public void alterarReceita(Dispensacao dispensacao){
         if(dispensacao.getId() == null || dispensacao.getId().equals(0)){
-            cadatrarDispensacao(dispensacao);
+            cadastrarDispensacao(dispensacao);
         }
         dispensacaoRepository.save(dispensacao);
     }

@@ -37,7 +37,7 @@ public class PlanoService {
         return planoRepository.findById(idPlano);
     }
 
-    public List<Plano> findAllDependente(){
+    public List<Plano> findAllPlanos(){
         return planoRepository.findAll();
     }
 
