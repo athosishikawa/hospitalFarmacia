@@ -8,6 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +32,12 @@ public class Plano implements Serializable{
     @Column
     private String nome;
 
-    @Column
-    List<Medicamento> medicamento;
+    @ManyToMany
+    @JoinTable(
+        name = "plano_medicamento",
+        joinColumns = @JoinColumn(name = "plano_id"),
+        inverseJoinColumns = @JoinColumn(name = "medicamento_id")
+    )
+    private List<Medicamento> medicamentos;
 
 }

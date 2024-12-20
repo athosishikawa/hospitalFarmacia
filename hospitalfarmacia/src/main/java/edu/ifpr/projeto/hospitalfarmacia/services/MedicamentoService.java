@@ -14,21 +14,21 @@ public class MedicamentoService {
     @Autowired
     private MedicamentoRepository medicamentoRepository;
 
-    public void cadastrarItemReceita(Medicamento itemReceita){
+    public void cadastrarMedicamento(Medicamento itemReceita){
         if(itemReceita.getId() == null){
             return;
         }
         medicamentoRepository.save(itemReceita);
     }
 
-    public void alterarItemReceita(Medicamento itemReceita){
+    public void alterarMedicamento(Medicamento itemReceita){
         if(itemReceita.getId() == null || itemReceita.getId().equals(0)){
-            cadastrarItemReceita(itemReceita);
+            cadastrarMedicamento(itemReceita);
         }
         medicamentoRepository.save(itemReceita);
     }
 
-    public void excluirItemReceita(int idItemReceita){
+    public void excluirMedicamento(int idItemReceita){
         Medicamento p = medicamentoRepository.findById(idItemReceita);
         medicamentoRepository.delete(p);
     }

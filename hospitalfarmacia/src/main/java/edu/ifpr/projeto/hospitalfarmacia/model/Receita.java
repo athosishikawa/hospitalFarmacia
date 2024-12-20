@@ -33,4 +33,18 @@ public class Receita implements Serializable{
     @Column
     @Temporal(TemporalType.DATE)
     private Date data;
+
+    //TODO: criar objetos Medicamento, medico, paciente, etc
+
+    @Column
+    private Medicamento medicamento;
+
+    @Column
+    private Medico medico;
+
+    @Column
+    private Paciente paciente;
+
+    @Column
+    private ItemReceita itemReceita;
 }

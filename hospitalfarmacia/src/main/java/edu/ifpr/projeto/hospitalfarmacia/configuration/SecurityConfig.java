@@ -24,7 +24,9 @@ public class SecurityConfig {
     private static final String[] AUTH_WHITELIST = {
         "/auth/*",
         "/swagger-ui/*",
-        "/pessoa/listarPessoas"
+        "/pessoa/listarPessoas",
+        "/medicamento/listarMedicamentos",
+        "/plano/listarPlanos"
     };
 
     @Bean
