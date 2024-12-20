@@ -1,5 +1,6 @@
 package edu.ifpr.projeto.hospitalfarmacia.repository;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,6 +16,6 @@ public interface DispensacaoRepository extends JpaRepository<Dispensacao, Intege
     public Dispensacao findById(@Param("id") int id);
 
     //TODO: verificar 
-    @Query("SELECT p FROM Dispensacao p WHERE p.dataDispensacao.id = :iddataDispensacao")
-    public List<Dispensacao> findByDatDispensacaos(@Param("dataDispensacao") int dataDispensacao);
+    @Query("SELECT p FROM Dispensacao p WHERE p.dataDispensacao = :dataDispensacao")
+    public List<Dispensacao> findByDatDispensacaos(@Param("dataDispensacao") Date dataDispensacao);
 }
