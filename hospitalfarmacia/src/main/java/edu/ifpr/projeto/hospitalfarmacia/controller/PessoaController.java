@@ -33,13 +33,13 @@ public class PessoaController {
     }
 
     @PostMapping("/cadastrarPessoa")
-    public boolean cadastrarPessoa(@RequestBody Pessoa pessoa){
+    public ResponseEntity<Pessoa> cadastrarPessoa(@RequestBody Pessoa pessoa){
         try {
-            pessoaService.cadatrarPessoa(pessoa);
-            return true;
+            Pessoa pessoaCriada = pessoaService.cadastrarPessoa(pessoa);
+            return new ResponseEntity<>(pessoaCriada, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

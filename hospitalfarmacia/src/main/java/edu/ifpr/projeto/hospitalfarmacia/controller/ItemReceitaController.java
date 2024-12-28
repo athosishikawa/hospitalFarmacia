@@ -7,13 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifpr.projeto.hospitalfarmacia.model.ItemReceita;
 import edu.ifpr.projeto.hospitalfarmacia.services.ItemReceitaService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/itemReceita")
@@ -33,13 +33,13 @@ public class ItemReceitaController {
     }
 
     @PostMapping("/cadastrarItemReceita")
-    public boolean cadastrarItemReceita(@RequestBody ItemReceita itemReceita){
+    public ResponseEntity<ItemReceita> cadastrarItemReceita(@RequestBody ItemReceita itemReceita){
         try {
-            itemReceitaService.cadastrarItemReceita(itemReceita);
-            return true;
+            ItemReceita itemCriado = itemReceitaService.cadastrarItemReceita(itemReceita);
+            return new ResponseEntity<>(itemCriado, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

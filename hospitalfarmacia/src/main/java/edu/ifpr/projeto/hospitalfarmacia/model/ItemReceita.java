@@ -36,5 +36,5 @@ public class ItemReceita implements Serializable{
     private String viaDeAdministracao;
 
     @Column
-    private String Observacoes;
+    private String observacoes;
 }

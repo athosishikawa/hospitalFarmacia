@@ -14,11 +14,10 @@ public class ItemReceitaService {
     @Autowired
     private ItemReceitaRepository itemReceitaRepository;
 
-    public void cadastrarItemReceita(ItemReceita itemReceita){
-        if(itemReceita.getId() == null){
-            return;
-        }
+    public ItemReceita cadastrarItemReceita(ItemReceita itemReceita){
+        
         itemReceitaRepository.save(itemReceita);
+        return itemReceita;
     }
 
     public void alterarItemReceita(ItemReceita itemReceita){

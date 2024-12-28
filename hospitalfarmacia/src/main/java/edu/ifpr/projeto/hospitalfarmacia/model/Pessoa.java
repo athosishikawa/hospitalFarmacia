@@ -3,6 +3,8 @@ package edu.ifpr.projeto.hospitalfarmacia.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,7 +26,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "pessoa-tb") //serve para informar que a classe sera uma tabela no banco 
+@Table(name = "pessoa_tb") //serve para informar que a classe sera uma tabela no banco 
 @Entity
 public class Pessoa implements Serializable{
 
@@ -35,9 +37,6 @@ public class Pessoa implements Serializable{
     @Column
     private String nome;
 
-    @Column
-    private String idade;
-
     @Column 
     private String cpf;
 
@@ -45,6 +44,7 @@ public class Pessoa implements Serializable{
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="id_endereco", nullable = true)
     private Endereco endereco;

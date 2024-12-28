@@ -13,12 +13,11 @@ public class PacienteService {
 
     @Autowired
     private PacienteRepository pacienteRepository;
+    
 
-    public void cadastrarPaciente(Paciente paciente){
-        if(paciente.getId() == null){
-            return;
-        }
+    public Paciente cadastrarPaciente(Paciente paciente){
         pacienteRepository.save(paciente);
+        return paciente;
     }
 
     public void alterarPaciente(Paciente paciente){

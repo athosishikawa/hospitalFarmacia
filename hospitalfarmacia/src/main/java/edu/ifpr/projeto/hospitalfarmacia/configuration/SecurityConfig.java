@@ -26,7 +26,12 @@ public class SecurityConfig {
         "/swagger-ui/*",
         "/pessoa/listarPessoas",
         "/medicamento/listarMedicamentos",
-        "/plano/listarPlanos"
+        "/plano/listarPlanos",
+        "/pessoa/cadastrarPessoa",
+        "/paciente/cadastrarPacientes",
+        "/medicos/findMedico",
+        "/receita/cadastrarReceita",
+        "/itemReceita/cadastrarItemReceita"
     };
 
     @Bean

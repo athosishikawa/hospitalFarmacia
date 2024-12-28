@@ -14,11 +14,10 @@ public class ReceitaService {
     @Autowired
     private ReceitaRepository receitaRepository;
 
-    public void cadastrarReceita(Receita receita){
-        if(receita.getId() == null){
-            return;
-        }
+    public Receita cadastrarReceita(Receita receita){
+        
         receitaRepository.save(receita);
+        return receita;
     }
 
     public void alterarReceita(Receita receita){

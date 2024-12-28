@@ -14,16 +14,16 @@ public class PessoaService {
     @Autowired
     private PessoaRepository pessoaRepository;
 
-    public void cadatrarPessoa(Pessoa pessoa){
+    public Pessoa cadastrarPessoa(Pessoa pessoa){
         if(pessoa.getCpf() == null || pessoa.getCpf().isEmpty()){
-            return;
         }
         pessoaRepository.save(pessoa);
+        return pessoa;
     }
 
     public void alterarPessoa(Pessoa pessoa){
         if(pessoa.getId() == null || pessoa.getId().equals(0)){
-            cadatrarPessoa(pessoa);
+            cadastrarPessoa(pessoa);
         }
         pessoaRepository.save(pessoa);
     }

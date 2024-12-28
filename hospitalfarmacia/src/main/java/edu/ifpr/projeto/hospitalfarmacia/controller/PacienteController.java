@@ -33,13 +33,13 @@ public class PacienteController {
     }
 
     @PostMapping("/cadastrarPacientes")
-    public boolean cadastrarPessoa(@RequestBody Paciente paciente){
+    public ResponseEntity<Paciente> cadastrarPaciente(@RequestBody Paciente paciente){
         try {
-            pacienteService.cadastrarPaciente(paciente);
-            return true;
+            Paciente pacienteCriado = pacienteService.cadastrarPaciente(paciente);
+            return new ResponseEntity<>(pacienteCriado, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

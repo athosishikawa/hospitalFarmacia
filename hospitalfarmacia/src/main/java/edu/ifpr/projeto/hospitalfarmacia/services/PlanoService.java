@@ -15,9 +15,7 @@ public class PlanoService {
     private PlanoRepository planoRepository;
 
     public void cadastrarPlano(Plano plano){
-        if(plano.getId() == null){
-            return;
-        }
+
         planoRepository.save(plano);
     }
 

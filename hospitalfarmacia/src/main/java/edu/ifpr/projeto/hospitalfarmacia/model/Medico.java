@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,7 +20,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "medico-tb") //serve para informar que a classe sera uma tabela no banco 
+@Table(name = "medico_tb") //serve para informar que a classe sera uma tabela no banco 
 @Entity
 public class Medico implements Serializable{
     
@@ -31,4 +33,8 @@ public class Medico implements Serializable{
 
     @Column
     private String assinaturaDigital;
+
+    @OneToOne
+    @JoinColumn(name = "pessoa_id", referencedColumnName = "id")
+    private Pessoa pessoa;
 }

@@ -15,9 +15,7 @@ public class MedicamentoService {
     private MedicamentoRepository medicamentoRepository;
 
     public void cadastrarMedicamento(Medicamento itemReceita){
-        if(itemReceita.getId() == null){
-            return;
-        }
+
         medicamentoRepository.save(itemReceita);
     }
 

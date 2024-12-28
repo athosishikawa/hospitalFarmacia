@@ -3,6 +3,8 @@ package edu.ifpr.projeto.hospitalfarmacia.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -46,6 +48,7 @@ public class Endereco implements Serializable{
     @Column
     private String numero;
 
+    @JsonManagedReference
     @OneToMany(fetch = FetchType.LAZY, mappedBy="endereco")
     private List<Pessoa> pessoas;
     
