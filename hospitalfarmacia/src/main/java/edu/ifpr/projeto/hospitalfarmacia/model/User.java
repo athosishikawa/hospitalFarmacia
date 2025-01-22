@@ -51,7 +51,7 @@ public class User implements UserDetails{
 
     @Override
     public String getPassword() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.senha;
     }
 
     @Override

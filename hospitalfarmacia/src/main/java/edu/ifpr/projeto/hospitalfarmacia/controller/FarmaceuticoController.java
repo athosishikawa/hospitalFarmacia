@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifpr.projeto.hospitalfarmacia.model.Farmaceutico;
 import edu.ifpr.projeto.hospitalfarmacia.services.FarmaceuticoService;
+// import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController

@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifpr.projeto.hospitalfarmacia.model.Paciente;
 import edu.ifpr.projeto.hospitalfarmacia.services.PacienteService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+// import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/paciente")
