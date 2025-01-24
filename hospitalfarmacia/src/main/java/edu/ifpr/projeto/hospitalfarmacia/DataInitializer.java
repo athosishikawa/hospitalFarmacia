@@ -16,8 +16,8 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         jdbcTemplate.execute("DELETE FROM paciente_tb;"); // Exclua dependentes primeiro
-        jdbcTemplate.execute("DELETE FROM plano_tb;");    // Agora exclua a tabela referenciada
         jdbcTemplate.execute("DELETE FROM plano_medicamento;");
+        jdbcTemplate.execute("DELETE FROM plano_tb;");    // Agora exclua a tabela referenciada
         jdbcTemplate.execute("DELETE FROM medicamento_tb;");
         jdbcTemplate.execute("DELETE FROM medico_tb;");
         jdbcTemplate.execute("DELETE FROM pessoa_tb;");
