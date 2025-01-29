@@ -29,6 +29,7 @@ public class SecurityConfig {
         "/pessoa/listarPessoas",
         "/medicamento/listarMedicamentos",
         "/plano/listarPlanos",
+        "/receita/listarReceitas",
         "/pessoa/cadastrarPessoa",
         "/paciente/cadastrarPacientes",
         "/medicos/findMedico",

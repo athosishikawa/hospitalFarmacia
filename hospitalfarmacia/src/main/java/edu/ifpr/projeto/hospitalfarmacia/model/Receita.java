@@ -27,7 +27,6 @@ import lombok.Setter;
 @Setter
 @Table(name = "receita_tb")
 @Entity
-
 public class Receita implements Serializable{
 
     @Id
@@ -39,19 +38,19 @@ public class Receita implements Serializable{
     private Date data;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "medicamento_id")
     private Medicamento medicamento;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "medico_id")
     private Medico medico;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
     
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "item_receita_id")
     private ItemReceita itemReceita;
 }
